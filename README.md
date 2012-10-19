@@ -1,6 +1,8 @@
-# String::Width::Tanasinn
+# StringWidth::Tanasinn
 
-TODO: Write a gem description
+imported the algorithm to measure the width of the String from tanasinn...
+
+*Why will a person dislike nihility of the consciousness?*
 
 ## Installation
 
