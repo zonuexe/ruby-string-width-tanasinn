@@ -41,7 +41,8 @@ module StringWidth
       when c < 0x1F100
         1
       when c < 0x1F300
-        case ARY_AMB_AS_SINGLE_1.include? c
+        case
+        when ARY_AMB_AS_SINGLE_1.include?(c)
           1
         else
           2
