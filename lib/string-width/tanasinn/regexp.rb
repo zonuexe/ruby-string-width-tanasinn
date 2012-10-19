@@ -35,6 +35,14 @@ module StringWidth
       \uf900-\ufa6d\ufa70-\ufad9\ufe10-\ufe19\ufe30-\ufe52\ufe54-\ufe66
       \ufe68-\ufe6b\uff01-\uff60\uffe0-\uffe6\uac00-\ud7a3\ufa6e\ufa6f
       \ufada]).join)
+    ARY_AMB_AS_SINGLE_1 = 
+      [0x1F12E, 0x1F16A, 0x1F16B, 0x1F1E6, 0x1F1E7, 0x1F1E8, 0x1F1E9,
+       0x1F1EA, 0x1F1EB, 0x1F1EC, 0x1F1ED, 0x1F1EE, 0x1F1EF, 0x1F1F0,
+       0x1F1F1, 0x1F1F2, 0x1F1F3, 0x1F1F4, 0x1F1F5, 0x1F1F6, 0x1F1F7,
+       0x1F1F8, 0x1F1F9, 0x1F1FA, 0x1F1FB, 0x1F1FC, 0x1F1FD, 0x1F1FE,
+       0x1F1FF
+      ]
+
     RE_AMB_AS_SINGLE_0 = Regexp.new(%w(
       [\u00ad\u0300-\u036f\u0483-\u0489\u0591-\u05bd\u05bf\u05c1\u05c2
       \u05c4\u05c5\u05c7\u0600-\u0604\u0610-\u061a\u064b-\u065f\u0670
