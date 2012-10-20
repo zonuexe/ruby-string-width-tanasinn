@@ -6,13 +6,9 @@ require 'spec_helper'
 describe StringWidth::Tanasinn do
   before(:all){ include StringWidth::Tanasinn }
   context "Ascii" do
-    subject do
-      {
-        "lower A" => "a",
-        "large Z" => "Z"
-      }.map{|c| wcwidth_amb_as_single(c) }
+    it "large A" do
+      StringWidth::Tanasinn::wcwidth_amb_as_single("A").should == 1
     end
-    its("lower A"){ should eq 1 }
     it "large Z" do
       StringWidth::Tanasinn::wcwidth_amb_as_single("Z").should == 1
     end
@@ -27,13 +23,12 @@ describe StringWidth::Tanasinn do
     it "Hiragana PO" do
       StringWidth::Tanasinn::wcwidth_amb_as_single("ぽ").should == 2
     end
-    its "Half Katakana KA" do
-      StringWidth::Tanasinn::wcwidth_amb_as_single("ｶ").should == 1
+    it "Half Katakana GA" do
+      ->{
+        StringWidth::Tanasinn::wcwidth_amb_as_single("ｶﾞ")
+      }.should raise_error ArgumentError
     end
-    its "Half Katakana Dakuten sign" do
-      StringWidth::Tanasinn::wcwidth_amb_as_single("ﾞ").should == 1
-    end
-    its "Half Katakana Small TSU" do
+    it "Half Katakana Small TSU" do
       StringWidth::Tanasinn::wcwidth_amb_as_single("ｯ").should == 1
     end
   end

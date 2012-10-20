@@ -29,6 +29,7 @@ require 'string-width/tanasinn/regexp'
 module StringWidth
   module Tanasinn
     def self.wcwidth_amb_as_single(s)
+      raise ArgumentError unless s.size == 1
       c = s.ord
       case
       when c < 0x10000
@@ -56,11 +57,12 @@ module StringWidth
       when c > 0xFFFFF
         1
       else
-        raise InvalidChar "codepoint out of range"
+        raise RangeError "codepoint out of range"
       end or 1
     end
 
     def wcwidth_amb_as_double(s)
+      raise ArgumentError unless s.size == 1
       c = s.ord
       case
       when c < 0x10000
@@ -81,7 +83,8 @@ module StringWidth
       when c > 0xFFFFF
         2
       else
-        raise InvalidChar "codepoint out of range"
+        raise RangeError "codepoint out of range"
       end or 2
+    end
   end
 end
