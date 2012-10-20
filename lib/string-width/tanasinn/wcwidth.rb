@@ -61,7 +61,7 @@ module StringWidth
       end or 1
     end
 
-    def wcwidth_amb_as_double(s)
+    def self.wcwidth_amb_as_double(s)
       raise ArgumentError unless s.size == 1
       c = s.ord
       case
@@ -84,7 +84,7 @@ module StringWidth
         2
       else
         raise RangeError "codepoint out of range"
-      end or 2
+      end or 1
     end
   end
 end
