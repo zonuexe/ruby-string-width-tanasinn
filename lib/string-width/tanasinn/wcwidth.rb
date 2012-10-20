@@ -35,7 +35,7 @@ module StringWidth
         case s
         when RE_AMB_AS_SINGLE_2
           2
-        when RE_AMB_AS_SINGLE_0
+        when RE_WIDTH_0_CHARS
           0
         end
       when c < 0x1F100
@@ -57,7 +57,31 @@ module StringWidth
         1
       else
         raise InvalidChar "codepoint out of range"
-      end
+      end or 1
     end
+
+    def wcwidth_amb_as_double(s)
+      c = s.ord
+      case
+      when c < 0x10000
+        case s
+        when RE_AMB_AS_DOUBLE_2
+          2
+        when RE_WIDTH_0_CHARS
+          0
+        end
+      when c < 0x1F100
+        1
+      when c < 0x1F200
+        2
+      when c < 0x1F300
+        2
+      when c < 0x20000
+        2
+      when c > 0xFFFFF
+        2
+      else
+        raise InvalidChar "codepoint out of range"
+      end or 2
   end
 end
