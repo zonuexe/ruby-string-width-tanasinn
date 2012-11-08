@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["tadsan@zonu.me"]
   gem.description   = %q{this gem provide module function that imported the algorithm to measure the width of the Charactor from  `tanasinn' terminal emulator. The function is divided into the thing except thing and it for CJK environment.}
   gem.summary       = "imported the algorithm to measure the width of the Charactor from  `tanasinn' terminal emulator."
-  gem.homepage      = "https://github.com/zonuexe/string-width-tanasinn"
+  gem.homepage      = "https://github.com/zonuexe/ruby-string-width-tanasinn"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
