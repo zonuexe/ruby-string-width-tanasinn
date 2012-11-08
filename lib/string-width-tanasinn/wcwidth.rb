@@ -24,7 +24,7 @@ the Initial Developer. All Rights Reserved.
 ***** END LICENSE BLOCK *****
 =end
 
-require 'string-width/tanasinn/regexp'
+require 'string-width-tanasinn/regexp'
 
 module StringWidth
   module Tanasinn
